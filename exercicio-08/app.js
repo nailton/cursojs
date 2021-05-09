@@ -50,7 +50,7 @@ function consoleValue(value) {
 }
 for (let i = 0; i < 7; i++) {
     if (consoleValue(435)) {
-        // console.log(`Esta é a ${i+1}ª vez que essa string é exibida.`)
+        console.log(`Esta é a ${i+1}ª vez que essa string é exibida.`)
     }
 }
 
@@ -119,17 +119,17 @@ passado por argumento;
 função.
 */
 
-getOddNumbers = numbers => {
+/**
+ * @param {number[]} numbers
+ */
+getOddNumbers = (numbers) => {
 
-    return numbers.map(n => {
-        let neg = []
-        if (n % 2 != 0) {
-            return [
-                neg = n
-            ]
-        }
-        return false
-    })
+     return numbers.reduce((acc, n) => {
+         if (n % 2 !== 0) {
+             acc.push(n)
+         }
+         return acc
+     }, [])
 
 }
 

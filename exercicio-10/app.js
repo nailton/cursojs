@@ -9,7 +9,15 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
-
+const objCat = {
+  name: "bushido",
+  age: 4,
+  color: "gray",
+  bestFriends: ["lucy", "mozy", "catpower", "juju"],
+  sound: miau()
+}
+function miau() { return "miau..." };
+console.log(objCat)
 /*
   02
 
@@ -18,13 +26,22 @@
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
+const msgCat = [objCat].reduce((acc, item) => {
+  let lastBF = item.bestFriends.pop()
+  let fullBF = item.bestFriends.reduce((acc, bf) => acc += `${bf}, `, "")
+  acc = `Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu ${item.name}, "age", que recebeu ${item.age}, "color", que recebeu ${item.color}, "bestFriends", que recebeu um array com os itens ${fullBF}e ${lastBF}, e "sound", que recebeu uma função que retorna ${item.sound}.`
 
+  return acc;
+}, "");
+
+console.log(msgCat)
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
-
+const changeAgeCat = (cat, age = 0) => cat.age + age
+console.log(`Meu gato tinha ${changeAgeCat(objCat)} anos e agora tem ${changeAgeCat(objCat, 2)} anos`)
 /*
   04
 
