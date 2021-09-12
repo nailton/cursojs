@@ -35,13 +35,15 @@ const msgCat = [objCat].reduce((acc, item) => {
 }, "");
 
 console.log(msgCat)
+
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 const changeAgeCat = (cat, age = 0) => cat.age + age
-console.log(`Meu gato tinha ${changeAgeCat(objCat)} anos e agora tem ${changeAgeCat(objCat, 2)} anos`)
+console.log(`\nMeu gato tinha ${changeAgeCat(objCat)} anos e agora tem ${changeAgeCat(objCat, 2)} anos`)
+
 /*
   04
 
@@ -49,6 +51,10 @@ console.log(`Meu gato tinha ${changeAgeCat(objCat)} anos e agora tem ${changeAge
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+
+const newBBFCat = (name) => objCat.bestFriends.push(name)
+newBBFCat('alixia')
+console.log(objCat.bestFriends)
 
 /*
   05
@@ -58,6 +64,9 @@ console.log(`Meu gato tinha ${changeAgeCat(objCat)} anos e agora tem ${changeAge
   - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
     colchetes.
 */
+const newColorCat = (color) => objCat.color[color]
+newColorCat('violeta')
+// console.log(objCat.color[])
 
 /*
   06
